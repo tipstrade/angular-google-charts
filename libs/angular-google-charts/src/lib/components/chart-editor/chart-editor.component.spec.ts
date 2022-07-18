@@ -62,7 +62,7 @@ describe('ChartEditorComponent', () => {
 
     it('should create chart editor', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       component.ngOnInit();
 
@@ -71,7 +71,7 @@ describe('ChartEditorComponent', () => {
 
     it('should emit initialized event', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const initializedSpy = jest.fn();
       component.initialized$.subscribe(event => initializedSpy(event));

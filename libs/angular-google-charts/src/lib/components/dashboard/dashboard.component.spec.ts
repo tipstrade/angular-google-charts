@@ -52,7 +52,7 @@ describe('DashboardComponent', () => {
 
     it('should create the data table', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       globalThis.google = { visualization: visualizationMock } as any;
 
@@ -74,7 +74,7 @@ describe('DashboardComponent', () => {
 
     it('should create the data table without columns if none are provided', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       globalThis.google = { visualization: visualizationMock } as any;
       const data = [
@@ -92,7 +92,7 @@ describe('DashboardComponent', () => {
 
     it('should wait for all controls and their charts until creating the dashboard', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const dashboardMock = { bind: jest.fn(), draw: jest.fn() };
       visualizationMock.Dashboard.mockReturnValueOnce(dashboardMock);
@@ -123,7 +123,7 @@ describe('DashboardComponent', () => {
 
     it('should bind all controls and dashboards', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const dashboardMock = { bind: jest.fn(), draw: jest.fn() };
       visualizationMock.Dashboard.mockReturnValueOnce(dashboardMock);
@@ -148,7 +148,7 @@ describe('DashboardComponent', () => {
 
     it('should register dashboard wrapper event handlers', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const dashboardMock = { bind: jest.fn(), draw: jest.fn() };
       visualizationMock.Dashboard.mockReturnValueOnce(dashboardMock);
@@ -174,7 +174,7 @@ describe('DashboardComponent', () => {
 
     it('should apply the provided formatters', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const formatter = { formatter: { format: jest.fn() }, colIndex: 1 };
       component.formatters = [formatter];
@@ -190,7 +190,7 @@ describe('DashboardComponent', () => {
 
     it('should draw the dashboard using the provided data', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const dashboardMock = { bind: jest.fn(), draw: jest.fn() };
       visualizationMock.Dashboard.mockReturnValueOnce(dashboardMock);

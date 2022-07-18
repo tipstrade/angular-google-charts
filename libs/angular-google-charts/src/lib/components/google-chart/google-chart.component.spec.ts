@@ -98,7 +98,7 @@ describe('GoogleChartComponent', () => {
       'should not throw if only the type, but no data is provided',
       waitForAsync(() => {
         const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-        service.loadChartPackages.mockReturnValueOnce(of(null));
+        service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
         component.ngOnInit();
 
@@ -109,7 +109,7 @@ describe('GoogleChartComponent', () => {
 
     it('should create the data table', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const data = [
         ['First Row', 10],
@@ -127,7 +127,7 @@ describe('GoogleChartComponent', () => {
 
     it('should assume the first row is data if no columns are provided', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const data = [
         ['First Row', 10],
@@ -142,7 +142,7 @@ describe('GoogleChartComponent', () => {
 
     it('should create the chart', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const dataTableMock = { data: [] };
       visualizationMock.arrayToDataTable.mockReturnValueOnce(dataTableMock);
@@ -174,7 +174,7 @@ describe('GoogleChartComponent', () => {
 
     it('should set the title, width and height', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const dataTableMock = { data: [] };
       visualizationMock.arrayToDataTable.mockReturnValueOnce(dataTableMock);
@@ -215,7 +215,7 @@ describe('GoogleChartComponent', () => {
 
     it('should apply the provided formatters', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const formatter = { formatter: { format: jest.fn() }, colIndex: 1 };
       component.formatters = [formatter];
@@ -231,7 +231,7 @@ describe('GoogleChartComponent', () => {
 
     it('should draw the chart', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       component.ngOnInit();
 
@@ -240,7 +240,7 @@ describe('GoogleChartComponent', () => {
 
     it('should not draw the chart if the chart is part of a dashboard', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       component['dashboard'] = {} as any;
 
@@ -251,7 +251,7 @@ describe('GoogleChartComponent', () => {
 
     it('should emit wrapper ready event', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const readySpy = jest.fn();
       component.wrapperReady$.subscribe(event => readySpy(event));
@@ -263,7 +263,7 @@ describe('GoogleChartComponent', () => {
 
     it('should register chart wrapper event handlers', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       component.ngOnInit();
 
@@ -283,7 +283,7 @@ describe('GoogleChartComponent', () => {
 
     it('should create the chart with correct package', () => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const chartType = ChartType.Map;
       component.type = chartType;
@@ -464,7 +464,7 @@ describe('GoogleChartComponent', () => {
 
     it('should redraw the chart if the window was resized', fakeAsync(() => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValue(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValue(of(undefined));
 
       component.ngOnInit();
 
@@ -480,7 +480,7 @@ describe('GoogleChartComponent', () => {
   describe('events', () => {
     beforeEach(() => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
     });
 
     it('should register chart event handlers after the chart got drawn', () => {

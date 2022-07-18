@@ -71,7 +71,7 @@ describe('ChartWrapperComponent', () => {
 
     it('should create the chart wrapper using the provided specs', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValue(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValue(of(undefined));
 
       const specs = { chartType: ChartType.AreaChart, dataTable: [] };
       component.specs = specs;
@@ -82,7 +82,7 @@ describe('ChartWrapperComponent', () => {
 
     it('should not throw if the specs are `null`', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValue(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValue(of(undefined));
       component.specs = undefined;
 
       expect(() => component.ngOnInit()).not.toThrow();
@@ -90,7 +90,7 @@ describe('ChartWrapperComponent', () => {
 
     it('should not use container or containerId if present in the chart specs', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValue(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValue(of(undefined));
 
       const specs = {
         chartType: ChartType.AreaChart,
@@ -110,7 +110,7 @@ describe('ChartWrapperComponent', () => {
 
     it('should register chart wrapper event handlers', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValue(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValue(of(undefined));
 
       component.specs = { chartType: ChartType.AreaChart };
 
@@ -136,7 +136,7 @@ describe('ChartWrapperComponent', () => {
 
     it('should emit ready event', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValue(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValue(of(undefined));
 
       component.specs = { chartType: ChartType.AreaChart };
 
@@ -150,7 +150,7 @@ describe('ChartWrapperComponent', () => {
 
     it('should draw the chart', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValue(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValue(of(undefined));
 
       component.specs = { chartType: ChartType.AreaChart };
 
@@ -261,7 +261,7 @@ describe('ChartWrapperComponent', () => {
   describe('events', () => {
     beforeEach(() => {
       const service = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      service.loadChartPackages.mockReturnValueOnce(of(null));
+      service.loadChartPackages.mockReturnValueOnce(of(undefined));
     });
 
     it('should emit ready event after the chart is ready', () => {

@@ -41,14 +41,14 @@ export class ScriptLoaderService {
    * @param packages The packages to load.
    * @returns A stream emitting as soon as the chart packages are loaded.
    */
-  public loadChartPackages(...packages: string[]): Observable<null> {
+  public loadChartPackages(...packages: string[]): Observable<void> {
     return this.loadGoogleCharts().pipe(
       mergeMap(() => this.config$),
       map(config => {
         return { ...getDefaultConfig(), ...(config || {}) };
       }),
       switchMap((googleChartsConfig: GoogleChartsConfig) => {
-        return new Observable<null>(observer => {
+        return new Observable<void>(observer => {
           const config = {
             packages,
             language: this.localeId,

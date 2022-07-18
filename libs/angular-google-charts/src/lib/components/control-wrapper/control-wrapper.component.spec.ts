@@ -52,7 +52,7 @@ describe('ControlWrapperComponent', () => {
 
     it('should create the control wrapper after the packages loaded', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       globalThis.google = { visualization: visualizationMock } as any;
 
@@ -81,7 +81,7 @@ describe('ControlWrapperComponent', () => {
 
     it('should add event listeners', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const controlWrapperMock = { setControlType: jest.fn() };
       visualizationMock.ControlWrapper.mockReturnValue(controlWrapperMock);
@@ -110,7 +110,7 @@ describe('ControlWrapperComponent', () => {
 
     it('should emit wrapper ready event', () => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const controlWrapperMock = { setControlType: jest.fn() };
       visualizationMock.ControlWrapper.mockReturnValue(controlWrapperMock);
@@ -172,7 +172,7 @@ describe('ControlWrapperComponent', () => {
   describe('events', () => {
     beforeEach(() => {
       const scriptLoaderService = TestBed.inject(ScriptLoaderService) as jest.Mocked<ScriptLoaderService>;
-      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(null));
+      scriptLoaderService.loadChartPackages.mockReturnValueOnce(of(undefined));
 
       const controlWrapperMock = { setControlType: jest.fn() };
       visualizationMock.ControlWrapper.mockReturnValue(controlWrapperMock);
