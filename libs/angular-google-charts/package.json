@@ -24,7 +24,6 @@
     "email": "gabriel.sperrer@gmail.com"
   },
   "dependencies": {
-    "@angular-builders/jest": "^13.0.4",
     "@types/google.visualization": "0.0.68",
     "tslib": "^2.4.0"
   },
