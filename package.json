@@ -6,8 +6,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve playground -o",
-    "build": "ng build angular-google-charts --prod",
-    "test": "ng test angular-google-charts",
+    "build": "ng build angular-google-charts --configuration production",
+    "test": "ng test angular-google-charts --coverage",
     "lint": "ng lint playground",
     "release": "standard-version",
     "postinstall": "ngcc es2015 browser module main --first-only --create-ivy-entry-points"

@@ -18,7 +18,7 @@ export class ChartEditorComponent implements OnInit {
   private editor: google.visualization.ChartEditor | undefined;
   private initializedSubject = new Subject<google.visualization.ChartEditor>();
 
-  constructor(private scriptLoaderService: ScriptLoaderService) {}
+  constructor(private scriptLoaderService: ScriptLoaderService) { }
 
   /**
    * Emits as soon as the chart editor is fully initialized.
