@@ -16,7 +16,7 @@ export interface ChartSelectionChangedEvent {
    * If only `row` is specified, the selected element is a row.
    * If only `column` is specified, the selected element is a column.
    */
-  selection: google.visualization.ChartSelection[];
+  selection: google.visualization.VisualizationSelectionArray[];
 }
 
 export interface ChartMouseOverEvent {
