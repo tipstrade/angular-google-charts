@@ -9,8 +9,7 @@
     "build": "ng build angular-google-charts --configuration production",
     "test": "ng test angular-google-charts --coverage",
     "lint": "ng lint playground",
-    "release": "standard-version",
-    "postinstall": "ngcc es2015 browser module main --first-only --create-ivy-entry-points"
+    "release": "standard-version"
   },
   "workspaces": [
     "apps/*",
@@ -37,9 +36,9 @@
     "npm": ">=7.0.0"
   },
   "devDependencies": {
-    "@angular/cli": "^12.0.4",
-    "@angular/compiler-cli": "^12.0.4",
-    "@angular/language-service": "^12.0.4",
+    "@angular/cli": "^13.3.8",
+    "@angular/compiler-cli": "^13.3.8",
+    "@angular/language-service": "^13.3.8",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "husky": "^4.3.8",
